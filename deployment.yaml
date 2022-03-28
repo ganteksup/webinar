@@ -1,1 +1,24 @@
-i
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: webinar-centos
+  namespace: webinar
+  labels:
+    app: centos
+spec:
+  selector:
+    matchLabels:
+      app: centos
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: centos
+    spec:
+      containers:
+        - name: centos
+          image: >-
+            centos/tools
+          command: ["/bin/bash", "-c", "sleep 2000000000000"]
+          ports:
+            - containerPort: 8080
