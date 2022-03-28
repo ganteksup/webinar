@@ -18,7 +18,7 @@ spec:
       containers:
         - name: centos
           image: >-
-            centos/tools
+            example-registry-quay-quay.apps.cluster-59v92.59v92.sandbox348.opentlc.com/gantek/webinar
           command: ["/bin/bash", "-c", "sleep 2000000000000"]
           ports:
             - containerPort: 8080
